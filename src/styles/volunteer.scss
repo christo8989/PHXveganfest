@@ -1,0 +1,9 @@
+@import 'variables';
+
+#VOLUNTEER {
+    .image {
+        width: $min-width - 40px; // 20 * 2 (page padding) = 40
+        height: 160px;
+    }
+}
+

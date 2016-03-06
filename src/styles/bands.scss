@@ -1,0 +1,42 @@
+@import 'variables';
+
+#BANDS {
+    $carousel-width: 400px; //image width
+    $text-padding: 20px;
+    $text-width: $min-width - $carousel-width - $text-padding - $text-padding; //40px from page padding
+    
+    .text-picture {
+        color: $light;
+        
+        .picture {
+            width:$carousel-width;
+            float:left;
+        }
+        
+        .time {
+            position:absolute;
+            width:$carousel-width;
+            text-align:center;
+            color:$white;
+            text-shadow: 2px 2px 4px black;
+            
+            &.band {
+                top:285px;
+                left:0;
+            }
+            
+            &.acoustic {
+                top:285px;
+                right:0;
+            }
+        }
+        
+        .text {
+            width:$text-width;
+            height:$carousel-width;
+            padding:0 $text-padding;
+            float:left;
+            background-color: $darkest;
+        }
+    }
+}

@@ -1,0 +1,171 @@
+@import 'variables';
+@import 'mixins';
+@import 'components';
+
+//var pathFontAwesome = '../../node_modules/node-font-awesome/node_modules/font-awesome';
+//@import '../../node_modules/node-font-awesome/node_modules/font-awesome/scss/variables';
+//@import '../../node_modules/node-font-awesome/node_modules/font-awesome/scss/icons';
+//@import 'font-awesome';
+
+
+// NORMALIZE \\
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size:$font-normal;
+    background-color: $white;
+    margin:0;
+    padding:0;
+}
+
+
+
+// CONTAINERS \\
+
+.container {
+    width: 100%;
+    min-width:$min-width;
+}
+
+.half-container {
+    width: 48%;
+    padding:0 2%;
+    box-sizing:border-box;
+    float:left;
+}
+
+.outer-container {
+    width:$min-width;
+    margin: 0 auto;
+}
+
+.inner-container {
+    width: 100%;
+    padding: 20px;
+    box-sizing:border-box;
+}
+
+    
+.image {
+    width:100%;
+    display:block;
+}
+
+
+// LAYOUT \\
+.center {
+    text-align: center;
+    margin: inherit auto;
+}
+
+.no-margin {
+    margin:0;
+}
+
+.no-top-margin {
+    margin-top:0;
+}
+
+.no-bottom-margin {
+    margin-bottom:0;
+}
+
+.float-right {
+    float:right;
+}
+
+
+
+// FONTS \\
+.font-largest {
+    font-size:$font-largest;
+}
+
+.font-small {
+    font-size:$font-small;
+}
+
+
+
+
+// COLORS \\
+.black {
+    background-color:$black;
+}
+
+
+#header {
+    background-color:#ebebeb;
+    
+    .inner-container {
+        padding:0;
+    }
+    
+    .link {
+        width:16%;
+        float:left;
+        color:$white;
+        text-align:center;
+        font-size:$font-menu;
+        padding:5px;
+        box-sizing:border-box;
+        text-decoration:none;
+        
+        &:hover,
+        &:active,
+        &.active {
+            color:#DAAE57;
+        }
+    }
+}
+
+#footer {
+    position:relative;
+    background-color:$white;
+    color:$dark;
+    min-height:$footer-height;
+    
+    .inner-container {
+        position:relative;
+    }
+    
+    .sponsors {
+        position:absolute;
+        top: 10px;
+        left:10px;
+        font-size:$font-small;
+    }
+    
+    .link {
+        width:31%;
+        margin:1%;
+        float:left;
+    }
+    
+    .image {
+        width:auto;
+        max-width:100%;
+        max-height:100px;
+        background-color: teal;  
+        margin: 0 auto;
+        border: 1px solid $white;
+        
+        &:hover,
+        &:active {
+            border: 1px solid $light;
+        }
+    }
+    
+    
+    a.email-link {
+        position:absolute;
+        bottom:5px;
+        right:5px;
+        color:$dark;
+        font-size:$font-small;
+        
+        &:hover,
+        &:active {
+            color:$black;
+        }
+    }
+}

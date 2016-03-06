@@ -11,11 +11,16 @@ var path = {
     
     jquery: './node_modules/jquery/dist/jquery.min.js',
     normalizecss: './node_modules/normalize.css/normalize.css',
+    //fontawesome: './node_modules/node-font-awesome/node_modules/font-awesome',
 };
 path.sscripts = path.src +  path.scripts;
 path.sstyles = path.src + path.styles;
 path.sviews = path.src + path.views;
 path.simages = path.src + path.images;
+//path.fonts = path.fontawesome + '/fonts/*';
+
+//https://www.npmjs.com/package/gulp-iconfont-css
+//https://www.npmjs.com/package/gulp-iconfont
 
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
@@ -24,11 +29,14 @@ var gulp = require('gulp'),
     cssmin = require('gulp-cssnano'),
     jsmin = require('gulp-uglify'),
     imagemin = require('gulp-imagemin'),
+    //icon = require('gulp-iconfont'),
     clean = require('gulp-rimraf'),
     run = require('run-sequence'),
     surge = require('gulp-surge'),
     //rename = require('gulp-rename'),
     concat = require('gulp-concat'),
+    //fontawesome = require('node-font-awesome'),
+    //iconcss = require('gulp-iconfont-css'),
     //source = require('vinyl-source-stream'),
     //browserify = require('browserify');
     pngquant = require('imagemin-pngquant');
@@ -43,7 +51,7 @@ gulp.task(views, function() {
     .pipe(jade({
         locals: YOUR_LOCALS
     }))
-    .pipe(gulp.dest(path.dev));
+    .pipe(gulp.dest(path.prod));
 });
 /* VIEWS END */
 
@@ -62,7 +70,21 @@ gulp.task(dscripts, function() {
 gulp.task(pscripts, function() {
     return gulp.src([path.jquery, path.sscripts + '/*.js'])
     .pipe(babel({ presets: ['es2015'] }))
-    .pipe(concat('app.min.js'))
+    .pipe(concat('app.js'))
+    .pipe(jsmin())
+    .pipe(gulp.dest(path.prod));
+});
+
+
+
+var dbootstrapjs = 'dbootstrapjs',
+    pbootstrapjs = 'pbootstrapjs';
+gulp.task(dbootstrapjs, function () {
+    return gulp.src(path.sscripts + '/bootstrap/*.js')
+    .pipe(gulp.dest(path.dev));
+});
+gulp.task(pbootstrapjs, function () {
+    return gulp.src(path.sscripts + '/bootstrap/*.js')
     .pipe(jsmin())
     .pipe(gulp.dest(path.prod));
 });
@@ -74,7 +96,11 @@ var dstyles = 'dev-styles',
     pstyles = 'prod-styles';
 gulp.task(dstyles, function() {
     return gulp.src([path.normalizecss, path.sstyles + '/*.scss'])
-    .pipe(sass().on('error', sass.logError))
+    .pipe(sass(
+        //{
+      //includePaths: [fontawesome.scssPath]
+   //}
+    ).on('error', sass.logError))
     .pipe(concat('app.css'))
     .pipe(gulp.dest(path.dev));
     
@@ -88,7 +114,26 @@ gulp.task(dstyles, function() {
 gulp.task(pstyles, function() {
     return gulp.src(path.sstyles + '/*.scss')
     .pipe(sass().on('error', sass.logError))
-    //concat all css files?
+    .pipe(concat('app.css'))
+    .pipe(cssmin())
+    .pipe(gulp.dest(path.prod));
+});
+
+
+// var fonts = 'fonts';
+// gulp.task(fonts, function () {
+//     return gulp.src(path.fonts)
+//     .pipe(gulp.dest(path.dev + '/fonts'));
+// });
+
+var dbootstrapcss = 'dbootstrapcss',
+    pbootstrapcss = 'pbootstrapcss';
+gulp.task(dbootstrapcss, function () {
+    return gulp.src(path.sstyles + '/bootstrap/*.css')
+    .pipe(gulp.dest(path.dev));
+});
+gulp.task(pbootstrapcss, function () {
+    return gulp.src(path.sstyles + '/bootstrap/*.css')
     .pipe(cssmin())
     .pipe(gulp.dest(path.prod));
 });
@@ -104,7 +149,7 @@ gulp.task(images, function() {
 			svgoPlugins: [{removeViewBox: false}],
 			use: [pngquant()]
 		}))
-		.pipe(gulp.dest(path.dev));
+		.pipe(gulp.dest(path.prod));
 });
 
 
@@ -132,10 +177,18 @@ gulp.task(pclean, function () {
 
 
 /* DEPLOY */
-var ddeploy = 'dev-deploy';
+var ddeploy = 'dev-deploy',
+    pdeploy = 'prod-deploy';
 gulp.task(ddeploy, function() {
     return surge({
         project: path.dev,
+        domain: CNAME,
+    });
+});
+
+gulp.task(pdeploy, function() {
+    return surge({
+        project: path.prod,
         domain: CNAME,
     });
 });
@@ -146,11 +199,11 @@ gulp.task(ddeploy, function() {
 var dbuild = 'dev-build',
     pbuild = 'prod-build';
 gulp.task(dbuild, function(callback) {
-    run(dclean, [views, images, dstyles, dscripts, ddeploy], callback);
+    run(dclean, [views, images, dstyles, dscripts, dbootstrapcss, dbootstrapjs], ddeploy, callback);
 });
 
 gulp.task(pbuild, function(callback) {
-    run(pclean, [views, images, pstyles, pscripts], callback);
+    run(pclean, [views, images, pstyles, pscripts, pbootstrapjs, pbootstrapcss], callback);
 });
 /* BUILDS END */
 
@@ -160,8 +213,14 @@ gulp.task(pbuild, function(callback) {
 
 gulp.task('watch', function() {
     gulp.watch(path.sviews + '/**/*', [views, ddeploy]);
-    gulp.watch(path.sscripts + '/**/*', [dscripts, ddeploy]);
-    gulp.watch(path.sstyles + '/**/*', [dstyles, ddeploy]);
+    gulp.watch(path.sscripts + '/**/*', [dscripts, dbootstrapjs, ddeploy]);
+    gulp.watch(path.sstyles + '/**/*', [dstyles, dbootstrapcss, ddeploy]);
+});
+
+gulp.task('prod-watch', function() {
+    gulp.watch(path.sviews + '/**/*', [views, pdeploy]);
+    gulp.watch(path.sscripts + '/**/*', [pscripts, pbootstrapjs, pdeploy]);
+    gulp.watch(path.sstyles + '/**/*', [pstyles, pbootstrapcss, pdeploy]);
 });
 /* WATCH END */
 

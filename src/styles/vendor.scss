@@ -1,0 +1,26 @@
+@import "variables";
+
+#VENDORS {
+    .text-picture {
+        $picture-width: 400px;
+        $text-width: $min-width - $picture-width - 60px; //20px * 3 (page padding + picture margin) = 60px
+        
+        
+        .text {
+            width: $text-width;
+        }
+        
+        .picture {
+            margin-left:20px;
+            width:400px;
+        }
+    }
+    
+    .item {
+        width: 33%;
+        height: 85px;
+        float: left;
+        box-sizing:border-box;
+        padding: 5px 10px;
+    }
+}

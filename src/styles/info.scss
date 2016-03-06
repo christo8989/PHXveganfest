@@ -1,0 +1,43 @@
+@import "variables";
+
+#INFO {
+    .text-picture {
+        
+        .text {
+            width:350px;
+            margin-left:20px;
+            text-align:left;
+            color:$black;
+        }
+        
+        .picture {
+            width:550px;
+            height:550px;
+            background-color:$white;
+        }
+    }
+    
+    .text-icon {
+        margin-left:0;
+        padding: 10px 2px;
+        box-sizing:border-box;
+        border-radius:10px;
+            
+        &:hover,
+        &:active {
+           background-color: #ddd;
+        }
+        
+        .text {
+            width:auto;
+        }
+        
+        .icon {
+            width:55px;
+            font-size:48px;
+            text-align:right;
+            margin-left:15px;
+            color:$darker;
+        }
+    }
+}

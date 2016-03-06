@@ -1,0 +1,35 @@
+extends ./shared/layout
+
+block main
+    .container#CONTACT
+        .outer-container
+            .inner-container
+            
+                .text-text
+                    .text.left
+                        h2.no-top-margin Contact Us
+                        p.no-bottom-margin Questions? Drop us a note at
+                        p.no-top-margin
+                            a.link(href='mailto:PHXveganfest@gmail.com') PHXveganfest@gmail.com
+                    .text.right
+                        a.link(href='https://www.instagram.com/phxveganfest', target='_blank')
+                            i.fa.fa-instagram.icon#instagram(title='Checkout awesome pictures of great vegan food!')
+                        a.link(href='https://twitter.com/phxveganfest', target='_blank')
+                            i.fa.fa-twitter-square.icon#twitter(title='Look for updates and new posts from PHXveganfest!')
+                        a.link(href='https://www.facebook.com/events/191027994572316', target='_blank') 
+                            i.fa.fa-facebook-square.icon#facebook(title='Checkout the facebook event and invite your friends!')
+                        .clearfix
+                        p.center.no-top-margin Get social with us! 
+                    .clearfix  
+                    
+                br
+                .big-link
+                    a.link(href='https://davissonent.tixato.com/buy/phx-vegan-festival', target='_blank') Purchase Tickets
+                
+                br
+                a.link.center(href='http://www.davissonentertainment.com/#!aboutus/c2414', target='_blank')
+                    img.image(src='davisson-entertainment.jpg', alt='Davisson Entertainment')
+                    
+                    
+block page-styles
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css")

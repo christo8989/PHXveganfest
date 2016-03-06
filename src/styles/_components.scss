@@ -1,0 +1,63 @@
+
+.big-link {
+    width:100%;
+    text-align:center;
+    
+    .link {
+        color: red;
+        font-size:$font-largest;
+        
+        &:visited {
+            color:red;
+        }
+        
+        &:hover,
+        &:active {
+            color:purple;
+        }
+    }
+}
+
+.text-picture {
+    width:100%;
+    
+    .text {
+        width:50%;
+        float:left;
+    }
+    
+    .picture {
+        width:50%;
+        float:left;
+    }
+}
+
+.text-icon {
+    width:100%;
+    
+    .text {
+        width:50%;
+        float:left;
+    }
+    
+    .icon {
+        width:50%;
+        float:left;
+    }
+}
+
+.text-text {
+    .text {
+        width: 48%;
+        
+        &.left {
+            margin-right: 2%;
+            float:left;
+        }
+        
+        &.right {
+            margin-left: 2%;
+            float:right;
+        }
+    }
+}
