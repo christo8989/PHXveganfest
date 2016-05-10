@@ -44,8 +44,18 @@ var gulp = require('gulp'),
 
 
 /* VIEWS */
-var views = 'views';
-gulp.task(views, function() {
+var dviews = 'dev-views',
+    pviews = 'prod-views';
+gulp.task(dviews, function() {
+    var YOUR_LOCALS = {};
+    return gulp.src(path.sviews + '/*.jade')
+    .pipe(jade({
+        locals: YOUR_LOCALS
+    }))
+    .pipe(gulp.dest(path.dev));
+});
+
+gulp.task(pviews, function() {
     var YOUR_LOCALS = {};
     return gulp.src(path.sviews + '/*.jade')
     .pipe(jade({
@@ -141,8 +151,19 @@ gulp.task(pbootstrapcss, function () {
 
 
 /* IMAGES */
-var images = 'images';
-gulp.task(images, function() {
+var dimages = 'dev-images',
+    pimages = 'prod-images';
+gulp.task(dimages, function() {
+    return gulp.src(path.simages + '/*')
+		.pipe(imagemin({
+			progressive: true,
+			svgoPlugins: [{removeViewBox: false}],
+			use: [pngquant()]
+		}))
+		.pipe(gulp.dest(path.dev));
+});
+
+gulp.task(pimages, function() {
     return gulp.src(path.simages + '/*')
 		.pipe(imagemin({
 			progressive: true,
@@ -160,7 +181,7 @@ gulp.task(images, function() {
 var dclean = 'dev-clean',
     pclean = 'prod-clean';
 gulp.task('clean', function (callback) {
-    run(['prod-clean','dev-clean'], callback);
+    run([pclean,dclean], callback);
 });
 
 gulp.task(dclean, function () {
@@ -199,11 +220,11 @@ gulp.task(pdeploy, function() {
 var dbuild = 'dev-build',
     pbuild = 'prod-build';
 gulp.task(dbuild, function(callback) {
-    run(dclean, [views, images, dstyles, dscripts, dbootstrapcss, dbootstrapjs], ddeploy, callback);
+    run(dclean, [dviews, dimages, dstyles, dscripts, dbootstrapcss, dbootstrapjs], ddeploy, callback);
 });
 
 gulp.task(pbuild, function(callback) {
-    run(pclean, [views, images, pstyles, pscripts, pbootstrapjs, pbootstrapcss], callback);
+    run(pclean, [pviews, pimages, pstyles, pscripts, pbootstrapjs, pbootstrapcss], pdeploy, callback);
 });
 /* BUILDS END */
 
@@ -212,13 +233,13 @@ gulp.task(pbuild, function(callback) {
 /* WATCH */
 
 gulp.task('watch', function() {
-    gulp.watch(path.sviews + '/**/*', [views, ddeploy]);
+    gulp.watch(path.sviews + '/**/*', [dviews, ddeploy]);
     gulp.watch(path.sscripts + '/**/*', [dscripts, dbootstrapjs, ddeploy]);
     gulp.watch(path.sstyles + '/**/*', [dstyles, dbootstrapcss, ddeploy]);
 });
 
 gulp.task('prod-watch', function() {
-    gulp.watch(path.sviews + '/**/*', [views, pdeploy]);
+    gulp.watch(path.sviews + '/**/*', [pviews, pdeploy]);
     gulp.watch(path.sscripts + '/**/*', [pscripts, pbootstrapjs, pdeploy]);
     gulp.watch(path.sstyles + '/**/*', [pstyles, pbootstrapcss, pdeploy]);
 });
