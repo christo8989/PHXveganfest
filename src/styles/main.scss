@@ -17,13 +17,27 @@ body {
     padding:0;
 }
 
+ul {
+    margin:0;
+    padding:0;
+}
+
+li {
+    list-style: none;
+}
+
 
 
 // CONTAINERS \\
-
 .container {
     width: 100%;
     min-width:$min-width;
+}
+
+.small-container {
+    width: 75%;
+    padding: 1% 2%;
+    margin: 1px;
 }
 
 .half-container {
@@ -54,7 +68,8 @@ body {
 // LAYOUT \\
 .center {
     text-align: center;
-    margin: inherit auto;
+    margin-right:auto;
+    margin-left:auto;
 }
 
 .no-margin {
@@ -73,6 +88,11 @@ body {
     float:right;
 }
 
+.indent,
+.indent1 {
+    padding-left: $indent;
+}
+
 
 
 // FONTS \\
@@ -80,10 +100,21 @@ body {
     font-size:$font-largest;
 }
 
+.font-large {
+    font-size:$font-large;
+}
+
 .font-small {
     font-size:$font-small;
 }
 
+.font-smallest {
+    font-size:$font-smallest;
+}
+
+.font-bold {
+    font-weight: 700;
+}
 
 
 
@@ -92,7 +123,28 @@ body {
     background-color:$black;
 }
 
+.color-facebook {
+    color:$color-facebook;
+}
 
+.color-twitter {
+    color:$color-twitter;
+}
+
+.color-instagram {
+    color:$color-instagram;
+}
+
+
+
+// TEXT COLORS \\
+.font-red {
+    color: $red;
+}
+
+
+
+// HEADER \\
 #header {
     background-color:#ebebeb;
     
@@ -118,9 +170,12 @@ body {
     }
 }
 
+
+
+// FOOTER \\
 #footer {
     position:relative;
-    background-color:$white;
+    background-color:$darkest;
     color:$dark;
     min-height:$footer-height;
     
@@ -132,7 +187,7 @@ body {
         position:absolute;
         top: 10px;
         left:10px;
-        font-size:$font-small;
+        font-size:$font-smallest;
     }
     
     .link {
@@ -161,11 +216,11 @@ body {
         bottom:5px;
         right:5px;
         color:$dark;
-        font-size:$font-small;
+        font-size:$font-smallest;
         
         &:hover,
         &:active {
-            color:$black;
+            color:$light;
         }
     }
 }

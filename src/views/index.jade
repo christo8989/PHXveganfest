@@ -5,38 +5,14 @@ block main
         .outer-container
             .inner-container
             
-                .big-link
-                    a.link(href='https://davissonent.tixato.com/buy/phx-vegan-festival', target='_blank') Purchase Tickets
+                .big-link.font-red.font-largest Ticket Link Coming Soon!
                 
                 p.center Davisson Entertainment is proud to present the 
-                    | first annual Phoenix Vegan Food Festival on 
-                    | Saturday, February 27, 2016!
+                    | second annual Phoenix Vegan Food Festival on 
+                    | Saturday, February 25, 2017!
                     
-                .text-picture 
-                    .text
-                        p The outdoor, family-friendly festival will be held 
-                            | from noon to 5 p.m. at the Phoenix Theatre and Phoenix 
-                            | Art Museum campus located at 100 E. McDowell Rd., Phoenix, AZ 85004.
-                        p Event highlights include vegan food trucks, 
-                            | small bite samples from vegan restaurants 
-                            | and food purveyors, an artisan market featuring 
-                            | vegan-friendly food and products, plus a kids’ activity area.
-                        p Kids 12 and under are free.
-                    .picture
-                        img.image(src='/map.png', alt='map')
-                    .clearfix
+                include ./shared/Components/venue-information
                     
                 br
                 
-                .ticket-container
-                    h2.center Ticket Information
-                    .half-container
-                        p.no-top-margin General Admission* - $25
-                        p *General admission includes access to the event, 
-                            | food samples, live entertainment and a drink token.
-                    .half-container
-                        p.no-top-margin VIP Admission** - $60 
-                        p **VIP includes 1 hour early access to the event, 
-                            | food samples, live entertainment, 2 drink tokens, 
-                            | meet and greet and SWAG bag.
-                    .clearfix
+                include ./shared/Components/ticket-information

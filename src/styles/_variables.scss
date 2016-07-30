@@ -8,6 +8,8 @@ $dark: $black + 80;
 $white: #fff;
 $light: $white - 20;
 
+$red: red;
+
 $color-facebook: #0844a4;
 $color-twitter: #00a4d3;
 $color-instagram: #8c3d22;
@@ -18,10 +20,14 @@ $font-menu: 24px;
 
 $font-normal: 24px;
 $font-largest: $font-normal + 20px;
-$font-small: $font-normal - 12px;
+$font-large: $font-normal + 8px;
+$font-small: $font-normal - 8px;
+$font-smallest: $font-normal - 12px;
 
 
 // LAYOUT \\
 $min-width: 960px;
 $width: $min-width - 40px; //40 from the page padding
-$footer-height: 150px;
+$footer-height: 50px;
+$indent: 25px;
+$indent2: $indent * 2; 
