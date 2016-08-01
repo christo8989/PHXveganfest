@@ -12,6 +12,7 @@
 body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size:$font-normal;
+    color: $font-color;
     background-color: $white;
     margin:0;
     padding:0;
@@ -32,6 +33,11 @@ li {
 .container {
     width: 100%;
     min-width:$min-width;
+}
+
+.no-overflow-container {
+    width: 100%;
+    overflow: hidden;
 }
 
 .small-container {
@@ -93,6 +99,14 @@ li {
     padding-left: $indent;
 }
 
+.indent2 {
+    padding-left: $indent * 2;
+}
+
+.indent3 {
+    padding-left: $indent * 3;
+}
+
 
 
 // FONTS \\
@@ -140,6 +154,14 @@ li {
 // TEXT COLORS \\
 .font-red {
     color: $red;
+}
+
+.font-color {
+    color: $darkest;
+}
+
+.font-white {
+    color: $lightest;
 }
 
 

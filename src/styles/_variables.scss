@@ -1,12 +1,20 @@
 
 // COLORS \\
+$primary: #A8D54A;
+$primary-darkest: $primary - 80;
+$primary-darker: $primary - 40;
+$primary-dark: $primary - 20;
+$primary-light: $primary + 20;
+
 $black: #000;
 $darkest: $black + 40;
 $darker: $black + 60;
 $dark: $black + 80;
 
 $white: #fff;
-$light: $white - 20;
+$lightest: $white - 20;
+$lighter: $white - 40;
+$light: $white - 80;
 
 $red: red;
 
@@ -23,6 +31,8 @@ $font-largest: $font-normal + 20px;
 $font-large: $font-normal + 8px;
 $font-small: $font-normal - 8px;
 $font-smallest: $font-normal - 12px;
+
+$font-color: $darkest;
 
 
 // LAYOUT \\
