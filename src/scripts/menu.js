@@ -4,8 +4,9 @@
 //import {currentPage} from "history";
 
 App.Menu = (function () {
+    var self = this;
 
-    var init = function () {
+    self.init = function () {
         var page = App.History.page();
         page = page ? page : 'home';
         
@@ -13,9 +14,8 @@ App.Menu = (function () {
         $link.addClass('active');
     };
 
-    return {
-        'init': init,
-    };
+
+    return self;
 })();
 
 App.Menu.init();

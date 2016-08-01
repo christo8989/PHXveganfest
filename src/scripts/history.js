@@ -6,22 +6,22 @@
 var App = App || {};
 
 App.History = (function () {
+    var self = this;
+    
     var hasWindow = window ? true : false;
     var hasHistory = hasWindow && history ? true : false;
     var hasNavigator = hasWindow && navigator ? true : false;
     var hasLocation = hasWindow && location ? true : false;
     
     
-    var currentPage = function() {
+    self.currentPage = function() {
         if (!hasLocation) 
             return null;
             
         return App.StringHelper.replace(location.pathname, '/', '');
     };
     
-    return {
-        'page' : currentPage,
-    };
+    return self;
 })();
 
 
