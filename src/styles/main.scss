@@ -90,6 +90,10 @@ li {
     margin-bottom:0;
 }
 
+.float-left {
+    float:left;
+}
+
 .float-right {
     float:right;
 }
@@ -187,7 +191,7 @@ li {
         &:hover,
         &:active,
         &.active {
-            color:#DAAE57;
+            color:$primary;
         }
     }
 }
