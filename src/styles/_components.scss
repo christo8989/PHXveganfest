@@ -1,20 +1,22 @@
 
-.big-link {
+a.big-link {
     width:100%;
     padding: 10px 0;
     text-align:center;
+    text-decoration: none;
     
     .link {
-        color: $red;
+        background-color: $primary;
+        color: $white;
         font-size:$font-largest;
         
         &:visited {
-            color: $red;
+            color: $primary-darker;
         }
         
         &:hover,
         &:active {
-            color:purple;
+            color:$primary-darkest;
         }
     }
 }
@@ -128,6 +130,17 @@ span.strikethrough {
     
     .ticket-inner-container {
         padding-left: 65px;
+    }
+    
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+    
+    &:hover,
+    &:active {
+        cursor: pointer;
+        background-color: $lightest;
     }
 }
 
