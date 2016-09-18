@@ -157,3 +157,37 @@ span.strikethrough {
         float: left;
     }
 }
+
+#Vote {
+    .newtimes-container {
+        padding:0;
+        margin: 0 0 10px 0;
+        
+    }
+    
+    .left-container {
+        float: left;
+        
+        img {
+            display: block;
+            width: 304px;
+            height: 209px;
+        }
+    }
+    
+    .right-container {
+        float: left;
+        border: solid 5px $white;
+        
+        &:hover,
+        &:active {
+            border: solid 5px $secondary;
+        }
+        
+        img {
+            display: block;
+            width: 606px;
+            height: 199px;
+        }
+    }
+}
