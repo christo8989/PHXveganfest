@@ -70,6 +70,10 @@ li {
     display:block;
 }
 
+.image-no-bottom-margin {
+    display:block;
+}
+
 
 // LAYOUT \\
 .center {
@@ -176,14 +180,14 @@ li {
     
     .header-container {
         position: relative;
+        overflow:hidden;
         
-        .text-container {
+        .image-container {
             position: absolute;
-            width: 486px;
-            padding: 5px 10px;
-            background-color: rgba(0,0,0,0.8);
-            top: 20px;
-            left: 20px;
+            width: 326px;
+            top: -15px;
+            left: 50%;
+            margin-left: -163px;
             
             h1 {
                 color: $primary-dark;
