@@ -1,23 +1,13 @@
-/// <reference path="../../node_modules/jquery/dist/jquery.js" /> 
-/// <reference path="main.js" /> 
+/// <reference path="./jquery/jquery.d.ts" />
 
-//import {currentPage} from "history";
+import { History } from "./history";
+import { Cookies } from "./cookies";
 
-/*
-App.Menu = (function () {
-    var self = this;
-
-    self.init = function () {
-        var page = App.History.page();
-        page = page ? page : 'home';
-        
-        var $link = $('#' + page);
+export class Menu {
+    public init = (): void => {
+        //Set active menu item based on url
+        let page = new History().currentPage();
+        let $link = $(`#${page}`);
         $link.addClass('active');
-    };
-
-
-    return self;
-})();
-
-App.Menu.init();
-*/
+    }
+}

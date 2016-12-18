@@ -29,5 +29,3 @@ export class AppWindow {
         return result;
     }
 }
-
-//export new AppWindow();

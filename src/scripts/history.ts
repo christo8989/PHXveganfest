@@ -1,28 +1,17 @@
-/// <reference path="../../node_modules/jquery/dist/jquery.js" /> 
-/// <reference path="main.js" /> 
+import { StringHelper } from './stringHelper';
 
-//import {replaceAll} from "string";
-
-/*
-var App = App || {};
-
-App.History = (function () {
-    var self = this;
+export class History {
+    private hasWindow: boolean = window ? true : false;
+    private hasHistory: boolean = this.hasWindow && history ? true : false;
+    private hasNavigator: boolean = this.hasWindow && navigator ? true : false;
+    private hasLocation: boolean = this.hasWindow && location ? true : false;
     
-    var hasWindow = window ? true : false;
-    var hasHistory = hasWindow && history ? true : false;
-    var hasNavigator = hasWindow && navigator ? true : false;
-    var hasLocation = hasWindow && location ? true : false;
-    
-    
-    self.currentPage = function() {
-        if (!hasLocation) 
+    public currentPage = (): string => {
+        if (!this.hasLocation)
             return null;
             
-        return App.StringHelper.replace(location.pathname, '/', '');
-    };
-    
-    return self;
-})();
-*/
-
+        let stringHelper = new StringHelper();
+        let result = stringHelper.replaceAll(location.pathname, '/', ''); 
+        return result || 'home';
+    }
+}

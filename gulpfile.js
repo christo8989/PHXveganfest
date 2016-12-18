@@ -85,10 +85,16 @@ gulp.task(dscripts, function() {
 });
 
 gulp.task(pscripts, function() {
-    return gulp.src([path.jquery, path.sscripts + '/*.js'])
-    .pipe(babel({ presets: ['es2015'] }))
-    .pipe(concat('app.js'))
-    .pipe(jsmin())
+    return browserify({
+        basedir: 'src/scripts/',
+        debug: false,
+        entries: ['main.ts'],
+        cache: {},
+        packageCache: {}
+    })
+    .plugin(tsify, {exclude: ['node_modules']})
+    .bundle()
+    .pipe(source('app.js'))
     .pipe(gulp.dest(path.prod));
 });
 

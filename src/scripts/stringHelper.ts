@@ -5,9 +5,7 @@ export class StringHelper {
     }
     
     public replaceAll(str, find, replace) {
-        let result = str.replace(new RegExp(escapeRegExp(find), 'g'), replace);
+        let result = str.replace(new RegExp(this.escapeRegExp(find), 'g'), replace);
         return result;
     }
 }
-
-//export new StringHelper();

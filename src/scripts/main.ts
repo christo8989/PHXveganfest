@@ -1,22 +1,7 @@
-/// <reference path="../../node_modules/jquery/dist/jquery.js" /> 
+import { Menu } from './menu';
+import { CacheBust } from './cacheBust';
 
-/*
-var App = App || {};
+new Menu().init(); 
+new CacheBust().init();
 
-App.IsMobile = App.IsMobile || false;
 
-App.StringHelper = (function () {
-    var self = this;
-    
-    var escapeRegExp = function (str) {
-        return str.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
-    };
-    
-    self.replaceAll = function (str, find, replace) {
-        return str.replace(new RegExp(escapeRegExp(find), 'g'), replace);
-    };
-    
-    
-    return self;
-})();
-*/
