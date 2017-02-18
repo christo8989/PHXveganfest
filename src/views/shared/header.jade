@@ -1,12 +1,16 @@
 header.container#header
-    img.image(src='/header.png' alt='header image')
+    .header-container
+        .image-container
+            img.image(src='/website-logo.png' alt='logo')
+        .empty-space-container(style='height:75px;')
+        img.image-no-bottom-margin(src='/header.png', width='1920', height='200', alt='header image')
     .container.black
         .outer-container
             .inner-container
                 a.link#home(href='/') Home
                 a.link#info(href='info') Info
                 a.link#vendors(href='vendors') Vendors
-                a.link#bands(href='bands') Bands
+                a.link#music(href='music') Music
                 a.link#volunteer(href='volunteer') Volunteer
                 a.link#contact(href='contact') Contact
             .clearfix

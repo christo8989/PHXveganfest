@@ -1,12 +1,27 @@
 
 // COLORS \\
+$primary: #8EBE3F;
+$primary-darkest: $primary - 80;
+$primary-darker: $primary - 40;
+$primary-dark: $primary - 20;
+$primary-light: $primary + 20;
+
+$secondary: #E3BC68;
+$secondary-darkest: $secondary - 80;
+$secondary-darker: $secondary - 40;
+$secondary-dark: $secondary - 20;
+
 $black: #000;
 $darkest: $black + 40;
 $darker: $black + 60;
 $dark: $black + 80;
 
 $white: #fff;
-$light: $white - 20;
+$lightest: $white - 20;
+$lighter: $white - 40;
+$light: $white - 80;
+
+$red: red;
 
 $color-facebook: #0844a4;
 $color-twitter: #00a4d3;
@@ -18,10 +33,16 @@ $font-menu: 24px;
 
 $font-normal: 24px;
 $font-largest: $font-normal + 20px;
-$font-small: $font-normal - 12px;
+$font-large: $font-normal + 8px;
+$font-small: $font-normal - 8px;
+$font-smallest: $font-normal - 12px;
+
+$font-color: $darkest;
 
 
 // LAYOUT \\
 $min-width: 960px;
 $width: $min-width - 40px; //40 from the page padding
-$footer-height: 150px;
+$footer-height: 50px;
+$indent: 25px;
+$indent2: $indent * 2; 

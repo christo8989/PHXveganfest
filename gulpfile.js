@@ -24,7 +24,8 @@ path.simages = path.src + path.images;
 
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
-    babel = require('gulp-babel'),
+    tsify = require('tsify'),
+    browserify = require('browserify'),
     jade = require('gulp-jade'),
     cssmin = require('gulp-cssnano'),
     jsmin = require('gulp-uglify'),
@@ -37,8 +38,7 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     //fontawesome = require('node-font-awesome'),
     //iconcss = require('gulp-iconfont-css'),
-    //source = require('vinyl-source-stream'),
-    //browserify = require('browserify');
+    source = require('vinyl-source-stream'),
     pngquant = require('imagemin-pngquant');
     
 
@@ -71,17 +71,30 @@ gulp.task(pviews, function() {
 var dscripts = 'dev-scripts',
     pscripts = 'prod-scripts';
 gulp.task(dscripts, function() {
-    return gulp.src([path.jquery, path.sscripts + '/main.js', path.sscripts + '/*.js'])
-    .pipe(babel({ presets: ['es2015'] }))
-    .pipe(concat('app.js'))
+    return browserify({
+        basedir: 'src/scripts/',
+        debug: true,
+        entries: ['main.ts'],
+        cache: {},
+        packageCache: {}
+    })
+    .plugin(tsify, {exclude: ['node_modules']})
+    .bundle()
+    .pipe(source('app.js'))
     .pipe(gulp.dest(path.dev));
 });
 
 gulp.task(pscripts, function() {
-    return gulp.src([path.jquery, path.sscripts + '/*.js'])
-    .pipe(babel({ presets: ['es2015'] }))
-    .pipe(concat('app.js'))
-    .pipe(jsmin())
+    return browserify({
+        basedir: 'src/scripts/',
+        debug: false,
+        entries: ['main.ts'],
+        cache: {},
+        packageCache: {}
+    })
+    .plugin(tsify, {exclude: ['node_modules']})
+    .bundle()
+    .pipe(source('app.js'))
     .pipe(gulp.dest(path.prod));
 });
 
@@ -210,7 +223,7 @@ gulp.task(ddeploy, function() {
 gulp.task(pdeploy, function() {
     return surge({
         project: path.prod,
-        domain: CNAME,
+        domain: CNAME, // 'christo8989-phxveganfest.surge.sh',
     });
 });
 /* BUILDS END */
@@ -234,7 +247,7 @@ gulp.task(pbuild, function(callback) {
 
 gulp.task('watch', function() {
     gulp.watch(path.sviews + '/**/*', [dviews, ddeploy]);
-    gulp.watch(path.sscripts + '/**/*', [dscripts, dbootstrapjs, ddeploy]);
+    gulp.watch(path.sscripts + '/**/*', [dscripts /*, dbootstrapjs*/, ddeploy]);
     gulp.watch(path.sstyles + '/**/*', [dstyles, dbootstrapcss, ddeploy]);
 });
 
