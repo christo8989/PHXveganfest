@@ -3,7 +3,7 @@ import { History } from "./history";
 
 export class CacheBust {
     private cookie: Cookies = new Cookies();
-    private version: string = '2.3.0';
+    private version: string = '2.3.2';
     
     public init = (): void => {
         let page = new History().currentPage();
