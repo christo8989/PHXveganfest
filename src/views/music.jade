@@ -1,0 +1,378 @@
+extends ./shared/layout
+
+block main
+    .container#BANDS
+        .outer-container
+            .inner-container
+                
+                h1 PHX Vegan Food Festival 2017 Music Lineup
+                
+                h2 Main Stage 
+                    span.float-right 10:00am - 5:00pm
+                .carousel.slide#band-carousel(data-ride='carousel')
+                    ol.carousel-indicators
+                        li.active(data-target='#band-carousel', data-slide-to='0')
+                        li(data-target='#band-carousel', data-slide-to='1')
+                        li(data-target='#band-carousel', data-slide-to='2')
+                        li(data-target='#band-carousel', data-slide-to='3')
+                        li(data-target='#band-carousel', data-slide-to='4')
+                        li(data-target='#band-carousel', data-slide-to='5')
+                    
+                    .carousel-inner(role='listbox')
+                        .item.active
+                            .text-picture
+                                .picture
+                                    img.image(src='/drinking-water-pre.jpg' data-src='/drinking-water.jpg' alt='Drinking Water')
+                                .text  
+                                    h1 Drinking Water
+                                    
+                                    p Drinking Water is a Las Vegas-based band. Their style is a mixture of unique sounds and genres blended
+                                        | to form that DW Sound. Once you feel the beat you're are sure to move your body. The band has toured
+                                        | internationally since 2009 and is currently playing the Vegan PHX Food Festival for the second year in a row!
+                                    <!-- a.link(href='http://drinkingwatermusic.com' target='_blank') Visit Drinking Water's Website -->
+                                    h1.time.band 10:00am - 10:45am
+                        .item  
+                            .text-picture
+                                .picture
+                                    img.image(src='/grass-fed-giants-pre.jpg' data-src='/grass-fed-giants.jpg' alt='Grass Fed Giants')
+                                .text
+                                    h1 Grass Fed Giants
+                                    p The Grass Fed Giants are an exciting new Americana band that have been thrilling audiences from
+                                        | Flagstaff to Phoenix and on down to Bisbee. If you're not familiar with 
+                                        | Americana music, you're about to get a
+                                        | great sampling of songs from some of the best artists in Americana today!
+                                    <!-- a.link(href='http://xxx.com' target='_blank') Visit Grass Fed Giants' Website --> 
+                                    h1.time.band 11:00am - 12:00pm
+                        .item
+                            .text-picture
+                                .picture
+                                    img.image(src='/tin-can-tourists-pre.JPG' data-src='/tin-can-tourists.JPG' alt='Tin Can Tourists')
+                                .text 
+                                    h1 Tin Can Tourists
+                                    p Tin Can Tourists are peddlers of thoughtful, literate borderland folk. Emily Roux and Gregor
+                                        | Wingard are a real life vegan married couple from Bisbee, and their music is grown in its canyon, influenced
+                                        | by the miners, outlaws, and wild women who have called the southwest their home for centuries.
+                                    <!-- a.link(href='https://www.xxx.com' target='_blank') Visit Tin Can Tourists' Website -->
+                                    h1.time.band 12:15pm - 1:15pm
+                        .item
+                            .text-picture
+                                .picture
+                                    img.image(src='sunday-at-noon-pre.jpg' data-src='sunday-at-noon.jpg' alt='Sunday at Noon')
+                                .text 
+                                    h1 Sunday at Noon
+                                    p Sunday At Noon is a 4 pc raucous rock band from Phoenix, AZ. Their music video for "Brain
+                                        | Damage" was recently named one of the 16 Best Videos Release by Phoenix bands in 2016. You can find them
+                                        | on Facebook, Twitter, and Instagram @sundayatnoonband.
+                                    <!-- a.link(href='https://www.xxx.com/' target='_blank') Visit Sunday at Noon's Website -->
+                                    h1.time.band 1:30pm - 2:30pm
+                        .item
+                            .text-picture
+                                .picture
+                                    img.image(src='76th-street-pre.jpg' data-src='76th-street.jpg' alt='76th Street')
+                                .text 
+                                    h1 76th Street
+                                    p Dynamic Singer/Songwriter/Entertainers . . . they engage audiences from 30 to 3000 with their
+                                        | stories of Strength, Independence and Love at Music Venues throughout the Western States. With a clear
+                                        | voice and powerful harmonies, Haley & Spencer "76TH STREET" bring their upbeat personalities to every
+                                        | performance; Haley with mature vocals, powerful keyboard and a touch of humor, Spencer with energetic
+                                        | voice, spirited guitar and personal warmth.
+                                    <!-- a.link(href='http://www.xxx.com' target='_blank') Visit 76th Street's Website -->
+                                    h1.time.band 2:45pm - 3:45pm
+                        .item
+                            .text-picture
+                                .picture
+                                    img.image(src='pride-through-strife.jpg', alt='Pride Through Strife')
+                                .text 
+                                    h1 Pride Through Strife
+                                    p There is a growing reggae scene in Arizona. Whether it is the likes of Black Bottom Lighters, Veragroove, 
+                                        | Fayuca or others, the sound of reggae is spreading like wildfire throughout the state. One of the more 
+                                        | recent appearances of that sound, one of the more astounding is Pride Through Strife. Though, more well 
+                                        | known for their live shows, their recent EP release has made it clear that they are here to stay. 
+                                    a.link(href='https://www.reverbnation.com/pridethroughstrife' target='_blank') Visit Pride Through Strife's Website 
+                                    h1.time.band 4:00pm - 5:00pm
+                    
+                    a.left.carousel-control(href='#band-carousel',  role='button', data-slide='prev')
+                        span.icon-prev(aria-hidden='true')
+                        span.sr-only Previous
+                    
+                    a.right.carousel-control(href='#band-carousel',  role='button', data-slide='next')
+                        span.icon-next(aria-hidden='true')
+                        span.sr-only Next
+                        
+                .clearfix
+                
+                
+                br
+                br
+                br
+                
+                h2 Acoustic Stage
+                    span.float-right 10:00am - 5:00pm
+                .carousel.slide#acoustic1-carousel(data-ride='carousel')
+                    ol.carousel-indicators
+                        li.active(data-target='#acoustic1-carousel', data-slide-to='0')
+                        li(data-target='#acoustic1-carousel', data-slide-to='1')
+                        li(data-target='#acoustic1-carousel', data-slide-to='2')
+                        li(data-target='#acoustic1-carousel', data-slide-to='3')
+                        li(data-target='#acoustic1-carousel', data-slide-to='4')
+                        li(data-target='#acoustic1-carousel', data-slide-to='5')
+                    
+                    .carousel-inner(role='listbox')
+                        .item.active
+                            .text-picture
+                                .picture
+                                    img.image(src='/kross-warr-pre.jpg' data-src='/kross-warr.jpg' alt='Kross Warr')
+                                .text  
+                                    h1 Kross Warr
+                                    p Kross is an up and coming musician here in the Valley. At 16 years of age, he is an active 
+                                        | participant of the Arizona Music Project with ambitions to reach out to the community 
+                                        | with his music for charitable events. He is also a member of the Basha High School Symphony
+                                        | Orchestra.  He shows his appreciation for music by playing all genres to include Classic Rock, 
+                                        | Blues, and Pop Rock.
+                                    <!-- a.link(href='http://xxx.com' target='_blank') Visit Kross Warr's Website  --> 
+                                    h1.time.band 10:00am - 10:45am
+                        .item  
+                            .text-picture
+                                .picture
+                                    img.image(src='/kevin-thomas-pre.jpg' data-src='/kevin-thomas.jpg' alt='Kevin Thomas')
+                                .text
+                                    h1 Kevin Thomas
+                                    p Kevin Thomas has been playing acoustic guitar in the Phoenix metro area for just over a year now,
+                                        | but established himself as a solo act in Minneapolis-St. Paul for 17 years prior to that. He has appeared at
+                                        | Culinary Dropout, The Gilbert Folk Festival, Xtreme Bean Coffee in Tempe, and Village Coffee Roastery in
+                                        | Scottsdale. Please welcome Kevin Thomas.
+                                    <!-- a.link(href='http://xxx.com' target='_blank') Visit Kevin Thomas' Website -->
+                                    h1.time.band 11:00am - 11:45am
+                        .item
+                            .text-picture
+                                .picture
+                                    img.image(src='/hieronymus-bogs-pre.jpg' data-src='/hieronymus-bogs.jpg' alt='Hieronymus Bogs')
+                                .text 
+                                    h1 Hieronymus Bogs
+                                    p Hieronymus Bogs is a one man troupe whose musical performances embrace the primitive ties between
+                                        | music, poetry and art. His contemplative songs unfold like primal hymns; his solemn baritone voice cradled
+                                        | in warm acoustic guitar, banjo and sleigh bell percussion. Bogs' performances flow from songs to recitations,
+                                        | and short vignettes that carry his often-metaphysical themes forward and at times off stage. His live shows
+                                        | make for a unified experience that re-mystifies what has often in performance become habit.
+                                    <!-- a.link(href='https://www.xxx.com' target='_blank') Visit Hieronymus Bogs' Website -->
+                                    h1.time.band 12:00pm - 1:00pm
+                        .item
+                            .text-picture
+                                .picture
+                                    img.image(src='shepherds-and-sailors-pre.jpg' data-src='shepherds-and-sailors.jpg' alt='Shepherds and Sailors')
+                                .text 
+                                    h1 Shepherds and Sailors
+                                    p Shepherds & Sailors is the project of Adam Reed who has been playing music in the Phoenix area for
+                                        | around 5 years. Inspired by folk, punk, indie rock, and classic singer-songwriters, Reed hopes to provide
+                                        | interesting music that can be enjoyed by anybody and still make your mind move! 
+                                    a.link(href='https://shepherdsandsailors.bandcamp.com' target='_blank') Visit Shepherds and Sailors's Website 
+                                    h1.time.band 1:15pm - 2:15pm
+                        .item
+                            .text-picture
+                                .picture
+                                    img.image(src='melody-guy-pre.png' data-src='melody-guy.png' alt='Melody Guy')
+                                .text 
+                                    h1 Melody Guy
+                                    p Melody Guy is and award-winning singer/songwriter and one of the hardest working women in
+                                        | showbiz and currently tours the country performing over 100 shows a year and covers thousands of miles. She
+                                        | is tall and funny and is here right now! Melody Guy!
+                                    <!-- a.link(href='http://www.xxx.com' target='_blank') Visit Melody Guy's Website -->
+                                    h1.time.band 2:30pm - 3:30pm
+                        .item
+                            .text-picture
+                                .picture
+                                    img.image(src='adam-smith-pre.jpg' data-src='adam-smith.jpg' alt='Adam Smith')
+                                .text 
+                                    h1 Adam Smith
+                                    p Adam Smith is a self-taught multi instrumentalist who grew up in the mountains of Southeast Kentucky. 
+                                        | He began writing songs in his early teens upon hearing Joni Mitchell’s album "Blue" which he says 
+                                        | changed his life forever. He has since released three full-length studio albums and toured the
+                                        | United States, bringing his unique sound to a growing number of loyal fans. Adam now resides in 
+                                        | Phoenix AZ and is working on a brand new project which can be expected to release this year.
+                                    a.link(href='http://adamsmithmusicart.com' target='_blank') Visit Adam Smith's Website 
+                                    h1.time.band 4:15pm - 5:00pm
+                                
+                    
+                    a.left.carousel-control(href='#acoustic1-carousel',  role='button', data-slide='prev')
+                        span.icon-prev(aria-hidden='true')
+                        span.sr-only Previous
+                    
+                    a.right.carousel-control(href='#acoustic1-carousel',  role='button', data-slide='next')
+                        span.icon-next(aria-hidden='true')
+                        span.sr-only Next
+                        
+                .clearfix
+                
+                
+                br
+                br
+                br
+                
+                h2 Keli May Rutledge Memorial Stage
+                    span.float-right 10:00am - 5:00pm
+                .carousel.slide#acoustic2-carousel(data-ride='carousel')
+                    ol.carousel-indicators
+                        li.active(data-target='#acoustic2-carousel', data-slide-to='0')
+                        li(data-target='#acoustic2-carousel', data-slide-to='1')
+                        li(data-target='#acoustic2-carousel', data-slide-to='2')
+                        li(data-target='#acoustic2-carousel', data-slide-to='3')
+                        li(data-target='#acoustic2-carousel', data-slide-to='4')
+                        li(data-target='#acoustic2-carousel', data-slide-to='5')
+                    
+                    .carousel-inner(role='listbox')
+                        .item.active
+                            .text-picture
+                                .picture
+                                    img.image(src='/raye-jones-pre.JPG' data-src='/raye-jones.JPG' alt='Raye Jones')
+                                .text
+                                    h1 Raye Jones
+                                    p Born into a music family, Raye Jones hails from Tempe AZ. He started singing and writing songs 
+                                        | at a young age and taight himself guitar at the age of 10. Music has been such a life changer
+                                        | for him and has helped him overcome a lot in his life. Raye hopes to move and inspire people 
+                                        | with his music one day and change this hobby into a career.
+                                    <!-- a.link(href='http://foresteater.com' target='_blank') Visit Raye Jones's Website  -->
+                                    h1.time.band 10:00am - 11:00am
+                        .item  
+                            .text-picture
+                                .picture
+                                    img.image(src='/elizabeth-tighe-pre.jpg' data-src='/elizabeth-tighe.jpg' alt='Elizabeth Tighe')
+                                .text
+                                    h1 Elizabeth Tighe
+                                    p Elizabeth Tighe is a locally-based 16 year old singer/songwriter who released her first album "Smoke
+                                        | Rises" in the spring of last year. She is featured as an artist around the state as well as in out of state locations.
+                                    <!-- a.link(href='http://xxx.com' target='_blank') Visit Elizabeth Tighe's Website -->
+                                    h1.time.band 11:15am - 12:15pm
+                        .item
+                            .text-picture
+                                .picture
+                                    img.image(src='/nick-cejka-pre.png' data-src='/nick-cejka.png' alt='Nick Cejka')
+                                .text 
+                                    h1 Nick Cejka
+                                    p Nick Cejka is a local singer songwriter who has been performing now for just over 2 years, and is
+                                        | excited to play at the PHX Vegan Food Festival. He is in the progress of writing and recording his debut EP
+                                        | which is set to come out in March.
+                                    <!-- a.link(href='https://www.xxx.com' target='_blank') Visit Nick Cejka's Website -->
+                                    h1.time.band 12:30pm - 1:30pm
+                        .item
+                            .text-picture
+                                .picture
+                                    img.image(src='lauren-case-pre.jpg' data-src='lauren-case.jpg' alt='Lauren Case')
+                                .text 
+                                    h1 Lauren Case
+                                    p 17-year- old indie-pop artist, Lauren Case, has performed all around the valley and feels very lucky to
+                                        | have landed here at the PHX Vegan Food Festival. Here to bring you originals as well as covers from some of her
+                                        | favorite artists, Lauren Case!
+                                    <!-- a.link(href='https://www.xxx.com/' target='_blank') Visit Lauren Case's Website -->
+                                    h1.time.band 1:45pm - 2:45pm
+                        .item
+                            .text-picture
+                                .picture
+                                    img.image(src='jam-namaste-pre.JPG' data-src='jam-namaste.JPG' alt='JAM')
+                                .text 
+                                    h1 JAM
+                                    p JAM has been performing in the phoenix music scene for over six years now. He was a finalist 
+                                        | in Alice Cooper's proof is in the pudding competition where he finished 1st place in his band and 
+                                        | 2nd as a soloist. Performing out almost every single night he has played at venues such as: The Whiskey 
+                                        | a Go-Go in LA, the Chandler Center for the Arts, Alice Cooperstown, Hard Rock Cafe and many more. 
+                                        | His musical influences range from The Beatles to The Pixies and Jimmy Hendrix to Jason Mraz. 
+                                        | His intention when he performs is to share a positive presence with others.
+                                    a.link(href='https://open.spotify.com/album/2W7SLiReghGVKQqsvx1JaR' target='_blank') Visit JAM's Website 
+                                    h1.time.band 3:00pm - 4:00pm
+                        .item
+                            .text-picture
+                                .picture
+                                    img.image(src='76th-street-pre.jpg' data-src='76th-street.jpg' alt='76th Street')
+                                .text 
+                                    h1 76th Street
+                                    p Dynamic Singer/Songwriter/Entertainers . . . they engage audiences from 30 to 3000 with their
+                                        | stories of Strength, Independence and Love at Music Venues throughout the Western States. With a clear
+                                        | voice and powerful harmonies, Haley & Spencer "76TH STREET" bring their upbeat personalities to every
+                                        | performance; Haley with mature vocals, powerful keyboard and a touch of humor, Spencer with energetic
+                                        | voice, spirited guitar and personal warmth.
+                                    <!-- a.link(href='http://www.xxx.com' target='_blank') Visit 76th Street's Website -->
+                                    h1.time.band 4:15pm - 5:00pm
+                                
+                    
+                    a.left.carousel-control(href='#acoustic2-carousel',  role='button', data-slide='prev')
+                        span.icon-prev(aria-hidden='true')
+                        span.sr-only Previous
+                    
+                    a.right.carousel-control(href='#acoustic2-carousel',  role='button', data-slide='next')
+                        span.icon-next(aria-hidden='true')
+                        span.sr-only Next
+                        
+                .clearfix
+                
+                
+                br
+                br
+                br
+                
+                include ./shared/Components/listening-room
+                
+                br
+                br
+                br
+                
+                h3 Last Year's Bands & Musicians
+                .image-grid
+                    .image-grid-container
+                        a.item-container(href='http://drinkingwatermusic.com' target='_blank')
+                            .item-title-container
+                            .center.title.font-white Drinking Water
+                            img.image(src='/drinking-water-thumb-pre.jpg', data-src='/drinking-water-thumb.jpg', alt='Drinking Water')
+                        a.item-container(href='http://foresteater.com' target='_blank')
+                            .item-title-container
+                            .center.title.font-white Foresteater
+                            img.image(src='/foresteater-thumb-pre.jpg', data-src='/foresteater-thumb.jpg', alt='Foresteater')
+                        a.item-container(href='https://www.sonicbids.com/band/weslynnmusic/audio' target='_blank')
+                            .item-title-container
+                            .center.title Weslynn
+                            img.image(src='/weslynn-thumb-pre.jpg', data-src='/weslynn-thumb.jpg', alt='Weslynn')
+                        a.item-container(href='https://www.reverbnation.com/pridethroughstrife' target='_blank')
+                            .item-title-container
+                            .center.title.font-white Pride Through Strife
+                            img.image(src='pride-through-strife-thumb-pre.jpg', data-src='pride-through-strife-thumb.jpg', alt='Pride Through Strife')
+
+                        a.item-container(href='http://www.soulectiveaz.com' target='_blank')
+                            .item-title-container
+                            .center.title.font-white Soulective
+                            img.image(src='soulective-thumb-pre.jpg', data-src='soulective-thumb.jpg', alt='Soulective')
+                        a.item-container(href='https://soundcloud.com/shaye-jennings' target='_blank')
+                            .item-title-container
+                            .center.title Shaye Jennings
+                            img.image(src='/shaye-jennings-thumb-pre.jpg', data-src='/shaye-jennings-thumb.jpg', alt='Shaye Jennings')
+                        a.item-container(href='https://www.facebook.com/kelirutledgemusic' target='_blank')
+                            .item-title-container
+                            .center.title Keli May Rutledge
+                            img.image(src='keli-may-rutledge-thumb-pre.jpg', data-src='keli-may-rutledge-thumb.jpg', alt='Keli May Rutledge')
+                        a.item-container(href='https://soundcloud.com/jam_namaste' target='_blank')
+                            .item-title-container
+                            .center.title.font-white Jam Namaste
+                            img.image(src='jam-namaste-thumb-pre.jpg', data-src='jam-namaste-thumb.jpg', alt='Jam Namaste')
+
+                        a.item-container(href='http://adamsmithmusicart.com' target='_blank')
+                            .item-title-container
+                            .center.title.font-white Adam Smith
+                            img.image(src='adam-smith-thumb-pre.jpg', data-src='adam-smith-thumb.jpg', alt='Adam Smith')
+                        a.item-container(href='https://www.reverbnation.com/saith' target='_blank')
+                            .item-title-container
+                            .center.title.font-white Saith
+                            img.image(src='saith-thumb-pre.jpg', data-src='saith-thumb.jpg', alt='Saith')
+                        .item-container
+                            .item-title-container
+                            .center.title Kross Warr
+                            img.image(src='/kross-warr-thumb-pre.jpg', data-src='/kross-warr-thumb.jpg', alt='Kross Warr')
+                        .item-container
+                            .item-title-container
+                            .center.title Raye Jones
+                            img.image(src='/raye-thumb-pre.jpg', data-src='/raye-thumb.jpg', alt='Raye Jones') 
+                        
+                        .clearfix
+
+
+block page-styles
+    link(rel="stylesheet", href="/bootstrap.css", type="text/css")
+
+block page-scripts
+    script(src="/bootstrap.js" type="text/javascript")

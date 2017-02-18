@@ -6,51 +6,24 @@ block main
             .inner-container
                 
                 div
-                    h1 Phoenix Vegan Food Festival
-                    p February 27, 2016 
-                    p Gates open for VIP Admission at 11:00am. 
-                        | Gates open for the General Admission at 12:00pm. 
-                        | Festivities will wrap up at 5:00pm.
-                
-                br
-                .text-picture 
-                    .picture
-                        img.image(src='/map.png', alt='map')
-                    .text
-                        h3.center.no-top-margin Phoenix Theatre & Phoenix Art Museum
-                        a(href='https://www.google.com/maps/dir//100+E+McDowell+Rd,+Phoenix,+AZ+85004/@33.4655492,-112.0730864,18z/data=!4m8!4m7!1m0!1m5!1m1!1s0x872b12403d313bc7:0x852d0a1c3c9f1d30!2m2!1d-112.0721778!2d33.4663026', target='_blank')
-                            .text-icon(title='click for google maps directions')
-                                .text
-                                    p.no-margin 100 E. McDowell Rd. 
-                                    p.no-margin Phoenix, AZ 85004
-                                .icon
-                                    i.fa.fa-car
-                                .clearfix
-                        p The Festival will be held at the Phoenix Theatre Campus. 
-                            | 100 E. McDowell Road on the South East corner of McDowell Street and Central Avenue
-                        p TIP: Avoid the hassle and take the METRO Light Rail to the McDowell/Central 
-                            | Ave station. 
-                        p Bike racks are also available on festival grounds. 
-                    .clearfix
+                    h1 PHX Vegan Food Festival
                     
-                br
-                br
-                .big-link
-                    a.link(href='https://davissonent.tixato.com/buy/phx-vegan-festival', target='_blank') Purchase Tickets
-                
-                .ticket-container
-                    h3.center Kids 12 and under are free!
-                    .half-container
-                        p.no-top-margin General Admission* - $25
-                        p *General admission includes access to the event, 
-                            | food samples, live entertainment and a drink token.
-                    .half-container
-                        p.no-top-margin VIP Admission** - $60 
-                        p **VIP includes 1 hour early access to the event, 
-                            | food samples, live entertainment, 2 drink tokens, 
-                            | meet and greet and SWAG bag.
-                    .clearfix
+                    .center
+                        p The second annual PHX Vegan Food Festival returns to the Phoenix Theatre/Phoenix Art Museum complex. 
+                            | The event showcases some of the state's best vegan and vegan friendly restaurants, food and beverage 
+                            | purveyors, as well as clothing, accessories, personal care products, household items, and more. 
+                            | This year's event promises to be even bigger and better, with a larger event space, more vendors, 
+                            | numerous bars and beverage stations, two stages of live music, an improved kids zone, additional 
+                            | demonstrations and presentations by chefs and industry experts, plus lower ticket prices!
                     
+                    br
+                    
+                    include ./shared/Components/venue-information
+                br
+                
+                include ./shared/Components/ticket-link.jade
+                
+                include ./shared/Components/ticket-information
                     
 block page-styles
     link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css")

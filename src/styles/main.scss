@@ -12,18 +12,38 @@
 body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size:$font-normal;
+    color: $font-color;
     background-color: $white;
     margin:0;
     padding:0;
 }
 
+ul {
+    margin:0;
+    padding:0;
+}
+
+li {
+    list-style: none;
+}
+
 
 
 // CONTAINERS \\
-
 .container {
     width: 100%;
     min-width:$min-width;
+}
+
+.no-overflow-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.small-container {
+    width: 75%;
+    padding: 1% 2%;
+    margin: 1px;
 }
 
 .half-container {
@@ -50,11 +70,16 @@ body {
     display:block;
 }
 
+.image-no-bottom-margin {
+    display:block;
+}
+
 
 // LAYOUT \\
 .center {
     text-align: center;
-    margin: inherit auto;
+    margin-right:auto;
+    margin-left:auto;
 }
 
 .no-margin {
@@ -69,8 +94,25 @@ body {
     margin-bottom:0;
 }
 
+.float-left {
+    float:left;
+}
+
 .float-right {
     float:right;
+}
+
+.indent,
+.indent1 {
+    padding-left: $indent;
+}
+
+.indent2 {
+    padding-left: $indent * 2;
+}
+
+.indent3 {
+    padding-left: $indent * 3;
 }
 
 
@@ -80,10 +122,21 @@ body {
     font-size:$font-largest;
 }
 
+.font-large {
+    font-size:$font-large;
+}
+
 .font-small {
     font-size:$font-small;
 }
 
+.font-smallest {
+    font-size:$font-smallest;
+}
+
+.font-bold {
+    font-weight: 700;
+}
 
 
 
@@ -92,9 +145,57 @@ body {
     background-color:$black;
 }
 
+.color-facebook {
+    color:$color-facebook;
+}
 
+.color-twitter {
+    color:$color-twitter;
+}
+
+.color-instagram {
+    color:$color-instagram;
+}
+
+
+
+// TEXT COLORS \\
+.font-red {
+    color: $red;
+}
+
+.font-color {
+    color: $darkest;
+}
+
+.font-white {
+    color: $lightest;
+}
+
+
+
+// HEADER \\
 #header {
     background-color:#ebebeb;
+    
+    .header-container {
+        position: relative;
+        overflow:hidden;
+        
+        .image-container {
+            position: absolute;
+            width: 326px;
+            top: -15px;
+            left: 50%;
+            margin-left: -163px;
+            
+            h1 {
+                color: $primary-dark;
+                margin: 0;
+                padding: 0;
+            }
+        }
+    }
     
     .inner-container {
         padding:0;
@@ -113,14 +214,17 @@ body {
         &:hover,
         &:active,
         &.active {
-            color:#DAAE57;
+            color:$primary;
         }
     }
 }
 
+
+
+// FOOTER \\
 #footer {
     position:relative;
-    background-color:$white;
+    background-color:$darkest;
     color:$dark;
     min-height:$footer-height;
     
@@ -132,7 +236,7 @@ body {
         position:absolute;
         top: 10px;
         left:10px;
-        font-size:$font-small;
+        font-size:$font-smallest;
     }
     
     .link {
@@ -161,11 +265,11 @@ body {
         bottom:5px;
         right:5px;
         color:$dark;
-        font-size:$font-small;
+        font-size:$font-smallest;
         
         &:hover,
         &:active {
-            color:$black;
+            color:$light;
         }
     }
 }
