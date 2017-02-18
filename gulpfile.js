@@ -223,7 +223,7 @@ gulp.task(ddeploy, function() {
 gulp.task(pdeploy, function() {
     return surge({
         project: path.prod,
-        domain: CNAME,
+        domain: CNAME, // 'christo8989-phxveganfest.surge.sh',
     });
 });
 /* BUILDS END */
